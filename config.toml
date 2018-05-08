@@ -1,5 +1,5 @@
 ## Basic Configuration
-baseurl = "https://SevillaR.netlify.com/"
+baseurl = "https://SevillaRusers.netlify.com/"
 languageCode = "en"
 
 theme = "hyde-hyde"
