@@ -1,0 +1,152 @@
+---
+title: Patrones espacio-temporales y modelos predictivos del uso de las bicicletas de Sevici
+author: JeronimoCarranza
+date: '2018-06-07'
+slug: patrones-y-prediccion-sevici
+categories: []
+tags:
+  - sevici
+  - patrones espacio-temporales
+  - modelos predictivos
+---
+
+
+
+Las diapositivas de la charla de Sevici de nuestra última reunión (2018-06-05) están 
+en [bitbucket](http://bitbucket.org/JeronimoCarranza2/SevillaR_SEVICI) y en 
+[github](http://github.com/JeronimoCarranza/SevillaR_SEVICI)
+
+Añado aquí el fragmento de código en el que se muestra la implementación de los modelos predictivos y que aparece en la última diapositiva como seudocódigo.
+
+
+```{r eval=FALSE}
+
+# Inicia objetos persistentes 
+modelos = tibble(id=0,modelo='',vi='',vj='',lambda=0,a0=0,df=0,r2=0,RMSE=0,R2test=0)
+betas = tibble(id=0,modelo='',vi='',vj='',nom=as.list(NULL),beta=as.list(NULL))
+residuos = tibble(id=0,modelo='',vi='',residuo=as.list(NULL))
+
+# Preparativos generales
+varDTF <- Bp_co.mini.train %>% dplyr::select(
+  one_of('hora','lun','mar','mie','jue','vie','sab','dom','fest','fsof',
+         'p','tmax','tmin'))
+
+testDTF <- Bp_co.mini.test %>% dplyr::select(
+  one_of('hora','lun','mar','mie','jue','vie','sab','dom','fest','fsof',
+         'p','tmax','tmin'))
+
+# Para cada estación salvo 109
+for (i in c(1:108,110:260)){
+  # Selección variables, etc.
+  vari = paste0('b',i)
+  varY = Bp_co.mini.train %>% dplyr::select(vari)
+  testY = Bp_co.mini.test %>% dplyr::select(vari)
+
+  varXi <- Bp_co.mini.train %>% dplyr::select(ends_with(vari)) %>% 
+                  dplyr::select(starts_with('l'))
+
+  testXi <- Bp_co.mini.test %>% dplyr::select(ends_with(vari)) %>% 
+                  dplyr::select(starts_with('l'))
+  
+  j = seviesta_nearest[i,2]
+  varj = paste0('b',j)
+  varXj <- Bp_co.mini.train %>% dplyr::select(ends_with(varj)) %>% 
+                  dplyr::select(starts_with('l'))
+  testXj <- Bp_co.mini.test %>% dplyr::select(ends_with(varj)) %>% 
+                  dplyr::select(starts_with('l'))
+  
+  varX <- bind_cols(varDTF,varXi,varXj)
+  testX <- bind_cols(testDTF,testXi,testXj)
+
+  # Modelo completo
+
+  # Ajuste con cros-validación
+  model.glmnet = cv.glmnet(as.matrix.data.frame(varX), 
+                           as.matrix.data.frame(varY), alpha=0.5)
+  idx.opt = which(model.glmnet$lambda==model.glmnet$lambda.1se)
+
+  # Predicción 
+  pred.glmnet = predict.cv.glmnet(model.glmnet,
+                                  as.matrix.data.frame(testX))
+
+  # Cálculos RMSE, R2test
+  RMSE = sqrt(mean((testY - pred.glmnet)^2))  
+  R2test = cor(testY,pred.glmnet)^2
+  
+  # Persiste resultados
+  id = nrow(modelos) + 1
+  modelos <- add_row(modelos
+    , id = id 
+    , modelo = 'GLMNET0'
+    , vi = vari
+    , vj = varj
+    , lambda = model.glmnet$glmnet.fit$lambda[idx.opt]
+    , a0 = model.glmnet$glmnet.fit$a0[idx.opt]
+    
+    , df = model.glmnet$glmnet.fit$df[idx.opt]
+    , r2 = model.glmnet$glmnet.fit$dev.ratio[idx.opt]
+    , RMSE = RMSE
+    , R2test = as.numeric(R2test)
+  )
+  betas <- add_row(betas, id = id, modelo = 'GLMNET0',
+                   vi = vari, vj = varj,
+                   nom = names(model.glmnet$glmnet.fit$beta[,idx.opt]),
+                   beta = model.glmnet$glmnet.fit$beta[,idx.opt]
+  )
+  residuos <- add_row(residuos, id = id, modelo = 'GLMNET0',
+                   vi = vari, residuo = (testY - pred.glmnet)[,1]
+  )
+  
+  # Modelos parciales  
+  
+  for (k in 0:5) {
+  
+      # Selección variables, etc.
+      ki = 14+k #(l15mbi,l30mbi,l1hbi,l4hbi,l8hbi,l24hbi)
+      kj = 20+k #(l15mbj,l30mbj,l1hbj,l4hbj,l8hbj,l24hbj)
+
+      varXk = varX[,-c(14:ki,20:kj)]
+      testXk = testX[,-c(14:ki,20:kj)]
+
+      # Ajuste por cros-validación
+      model.glmnet = cv.glmnet(as.matrix.data.frame(varXk), 
+                               as.matrix.data.frame(varY), alpha=0.5)
+      idx.opt = which(model.glmnet$lambda==model.glmnet$lambda.1se)
+
+      # Predicción
+      pred.glmnet = predict.cv.glmnet(model.glmnet,
+                                  as.matrix.data.frame(testXk))
+
+      # Cálculos RMSE, R2test
+      RMSE = sqrt(mean((testY - pred.glmnet)^2))
+      R2test   = cor(testY,pred.glmnet)^2
+
+      # Persiste resultados
+      id = nrow(modelos) + 1
+      modelos <- add_row(modelos
+        , id = id 
+        , modelo = paste0('GLMNET',k+1)
+        , vi = vari
+        , vj = varj
+        , lambda = model.glmnet$glmnet.fit$lambda[idx.opt]
+        , a0 = model.glmnet$glmnet.fit$a0[idx.opt]
+        
+        , df = model.glmnet$glmnet.fit$df[idx.opt]
+        , r2 = model.glmnet$glmnet.fit$dev.ratio[idx.opt]
+        , RMSE = RMSE
+        , R2test = as.numeric(R2test)
+      )
+      betas <- add_row(betas, id = id, modelo = paste0('GLMNET',k+1),
+                       vi = vari, vj = varj,
+                       nom = names(model.glmnet$glmnet.fit$beta[,idx.opt]),
+                       beta = model.glmnet$glmnet.fit$beta[,idx.opt]
+      )
+      residuos <- add_row(residuos, id = id, modelo = paste0('GLMNET',k+1),
+                   vi = vari, residuo = (testY - pred.glmnet)[,1]
+      )
+  }
+}
+
+```
+
+
