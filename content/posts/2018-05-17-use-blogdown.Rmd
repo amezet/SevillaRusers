@@ -4,6 +4,7 @@ author: V. Sanz
 date: '2018-05-17'
 tags:
   - blogdown
+  - charlas
 slug: use-blogdown
 ---
 

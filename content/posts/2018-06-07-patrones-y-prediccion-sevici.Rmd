@@ -5,9 +5,10 @@ date: '2018-06-07'
 slug: patrones-y-prediccion-sevici
 categories: []
 tags:
-  - sevici
+  - Sevici
   - patrones espacio-temporales
   - modelos predictivos
+  - charlas
 ---
 
 
