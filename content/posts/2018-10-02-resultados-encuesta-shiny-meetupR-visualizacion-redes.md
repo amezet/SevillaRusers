@@ -11,12 +11,14 @@ tags:
   - grupo
 ---
 
-# SevillaR_02Oct18
 Meetup R - Sevilla - 2 Octubre 2018
 
 En nuestra sesión de de comienzo de curso 2018-19, tuvimos tres charlas:
+
   - Presentación de los resultados de la Encuesta 2018
+  
   - Aplicación Shiny con uso de Leaflet para presentar la localización de los Meetups de R en el mundo
+  
   - Visualización de redes
 
 # Presentación resultados Encuesta 2018
