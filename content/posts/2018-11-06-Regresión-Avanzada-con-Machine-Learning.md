@@ -23,8 +23,10 @@ La charla tuvo dos partes.
 
 [Antonio Marín](https://www.linkedin.com/in/antonio-marin-7a58187/) hizo una breve introducción del Machine Learning, sobre todo a la parte de Regresión, y seguidamente mostró un ejemplo sencillo usando tanto LightGBM como XGBoost.
 [Aquí se puede descargar el código](https://github.com/amezet/SevillaR_06Nov18/blob/master/Modelos%20LGB-XGB%20sencillos.R)
+
 A continuación ejecutó el magnífico [Kernel](https://www.kaggle.com/erikbruin/house-prices-lasso-xgboost-and-a-detailed-eda) de la competición de Kaggle [House Price](https://www.kaggle.com/c/house-prices-advanced-regression-techniques)
 El código en Rmarkdown se puede descargar [aquí](https://github.com/amezet/SevillaR_06Nov18/blob/master/house-prices-lasso-xgboost-and-a-detailed-eda.Rmd)
+
 Finalmente hizo unas modelizaciones con [Regresión Lineal](https://github.com/amezet/SevillaR_06Nov18/blob/master/Pruebas%20sobre%20House%20Price.R) y con LightGBM a partir de los datos sin preprocesado.
 
 [Presentación](https://github.com/amezet/SevillaR_06Nov18/blob/master/Regresi%C3%B3n%20Avanzada%20ML%20SevillaR_06Nov18.pptx)
