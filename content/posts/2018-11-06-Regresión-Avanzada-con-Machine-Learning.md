@@ -19,7 +19,7 @@ Hoy tuvimos la segunda charla del curso, en la que se habló de Regresión Avanz
 
 La charla tuvo dos partes.
 
-# Introducción al Machine Learning, ejemplo sencillo usando árboles de regresión con boosting y ejemplo avanzado con House Price de Kaggle
+# Introducción al Machine Learning y ejemplos con árboles de regresión
 
 [Antonio Marín](https://www.linkedin.com/in/antonio-marin-7a58187/) hizo una breve introducción del Machine Learning, sobre todo a la parte de Regresión, y seguidamente mostró un ejemplo sencillo usando tanto LightGBM como XGBoost.
 [Aquí se puede descargar el código](https://github.com/amezet/SevillaR_06Nov18/blob/master/Modelos%20LGB-XGB%20sencillos.R)
