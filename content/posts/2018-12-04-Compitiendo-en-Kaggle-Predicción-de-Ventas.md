@@ -2,7 +2,7 @@
 title: Compitiendo en Kaggle - Predicción de Ventas
 author: Antonio Marin Ecija
 date: '2018-12-04'
-slug: regresion-avanzada-machine-learning
+slug: compitiendo-kaggle-prediccion-ventas
 categories:
   - Kaggle
   - Machine Learning
