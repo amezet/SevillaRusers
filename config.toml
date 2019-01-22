@@ -19,7 +19,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     authorimage = "/img/logoSevillaR2.jpg"
     dateformat = "2 Jan 2006"
     highlightjs = true
-    # highlightjsstyle = "github"
+    highlightjsstyle = "github"
     # please choose either GraphComment or Disqus
     # GraphCommentId = "your-graph-comment-id"
 
