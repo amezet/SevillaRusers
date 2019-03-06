@@ -3,8 +3,9 @@ title: Regresión Avanzada con Machine Learning
 author: Antonio Marín Ecija
 date: '2018-11-06'
 slug: regresion-avanzada-machine-learning
-tags:
+categories: 
   - charlas
+tags:
   - Regresión
   - Machine Learning
   - LightGBM

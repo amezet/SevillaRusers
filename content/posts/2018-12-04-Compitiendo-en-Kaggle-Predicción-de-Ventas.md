@@ -3,8 +3,9 @@ title: Compitiendo en Kaggle - Predicción de Ventas
 author: Antonio Marín Ecija
 date: '2018-12-04'
 slug: compitiendo-kaggle-prediccion-ventas
-tags:
+categories: 
   - charlas
+tags:
   - Kaggle
   - Machine Learning
   - XGBoost

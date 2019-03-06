@@ -3,10 +3,12 @@ title: Lista de distribución y Rmarkdown
 author: ibartomeus
 date: '2014-11-26'
 slug: lista-de-distribución-y-rmarkdown
-categories: []
-tags:
+categories: 
+  - charlas
   - grupo
+tags:
   - Rmarkdown
+  - Reproducibilidad
 ---
 
 

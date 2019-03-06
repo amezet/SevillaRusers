@@ -3,8 +3,7 @@ title: Balance del curso 2017-18
 author: Francisco Rodriguez-Sanchez
 date: '2018-06-07'
 slug: balance-del-curso-2017-18
-categories: []
-tags:
+categories: 
   - grupo
 ---
 

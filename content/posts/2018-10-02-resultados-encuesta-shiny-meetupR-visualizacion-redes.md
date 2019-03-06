@@ -3,13 +3,14 @@ title: Comienzo Curso 2018-19
 author: Antonio Marín Ecija
 date: '2018-10-02'
 slug: comienzo-curso-2018-19
-tags:
-  - grupo
+categories: 
   - charlas
-  - encuesta 2018-19
+  - grupo
+tags:
+  - encuesta
   - shiny
   - leaflet
-  - meetups R
+  - meetups
   - redes complejas
   - visualización
 ---
