@@ -15,4 +15,5 @@ Con el apoyo de
 ![](/img/logoDSC.png)
 
 
+Seguimos el [código de conducta](https://wiki.r-consortium.org/view/R_Consortium_and_the_R_Community_Code_of_Conduct) del RConsortium.
 
