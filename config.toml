@@ -51,12 +51,18 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 ## Main Menu
 [[menu.main]]
+    name = "Quiénes somos"
+    identifier = "about"
+    weight = 10
+    url = "/about/"
+[[menu.main]]
+    name = "Únete"
+    identifier = "subscription"
+    weight = 20
+    url = "https://www.meetup.com/es-ES/Sevilla-R-users/"
+[[menu.main]]
     name = "Posts"
     weight = 100
     identifier = "posts"
     url = "/posts/"
-[[menu.main]]
-    name = "About"
-    identifier = "about"
-    weight = 200
-    url = "/about/"
+
