@@ -1,9 +1,15 @@
 <section class="social">
+  {{ with .Site.Params.social.meetup }}
+	<a href="https://www.meetup.com/es-ES/{{.}}" rel="me"><i class="fab fa-meetup fa-lg" aria-hidden="true"></i></a>
+	{{ end }}
 	{{ with .Site.Params.social.twitter }}
 	<a href="https://twitter.com/{{.}}" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
 	{{ end }}
 	{{ with .Site.Params.social.facebook }}
 	<a href="https://facebook.com/{{.}}" rel="me"><i class="fab fa-facebook-f"></i></a>
+	{{ end }}
+	{{ with .Site.Params.social.youtube }}
+	<a href="https://www.youtube.com/channel/{{.}}" rel="me"><i class="fab fa-youtube-square fa-lg" aria-hidden="true"></i></a>
 	{{ end }}
 	{{ with .Site.Params.social.github }}
 	<a href="https://github.com/{{.}}" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
@@ -38,7 +44,11 @@
 	{{ with .Site.Params.social.aboutme }}
 	&nbsp;<a href="https://about.me/{{.}}"><i class="fas fa-address-card fa-lg" aria-hidden="true"></i></a>
 	{{ end }}
+	{{ with .Site.Params.social.forum }}
+	&nbsp;<a href="https://groups.google.com/forum/#!forum/{{.}}"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a>
+	{{ end }}
 	{{ with .Site.Params.social.email }}
 	<a href="mailto:{{.}}" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
 	{{ end }}
+
 </section>
