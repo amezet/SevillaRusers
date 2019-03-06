@@ -45,6 +45,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     meetup = "Sevilla-R-users"
     forum = "sevillarusers"
     youtube = "UC4_SN0le5WFMu_LFaIufLbA"
+    feed = "index.xml"
 
 
 
