@@ -1,18 +1,14 @@
 ---
 title: Compitiendo en Kaggle - Predicción de Ventas
-author: Antonio Marin Ecija
+author: Antonio Marín Ecija
 date: '2018-12-04'
 slug: compitiendo-kaggle-prediccion-ventas
-categories:
+tags:
+  - charlas
   - Kaggle
   - Machine Learning
   - XGBoost
-tags:
-  - grupo
 ---
-
-# SevillaR_04Dic18
-Meetup R - Sevilla - 4 Diciembre 2018
 
 Hoy tuvimos una charla muy interesante sobre Kaggle y Machine Learning, en la que se habló del proceso de competir prediciendo ventas.
 

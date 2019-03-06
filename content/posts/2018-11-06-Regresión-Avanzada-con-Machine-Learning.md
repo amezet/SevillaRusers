@@ -1,18 +1,17 @@
 ---
 title: Regresión Avanzada con Machine Learning
-author: Antonio Marin Ecija
+author: Antonio Marín Ecija
 date: '2018-11-06'
 slug: regresion-avanzada-machine-learning
-categories:
+tags:
+  - charlas
   - Regresión
   - Machine Learning
-  - LightGBM, XGBoost
-  - Keras, Tensorflow
-tags:
-  - grupo
+  - LightGBM
+  - XGBoost
+  - Keras
+  - Tensorflow
 ---
-
-Meetup R - Sevilla - 6 Noviembre 2018
 
 Hoy tuvimos la segunda charla del curso, en la que se habló de Regresión Avanzada usando técnicas de Machine Learning
 

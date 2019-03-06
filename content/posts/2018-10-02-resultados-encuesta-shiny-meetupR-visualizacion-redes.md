@@ -1,19 +1,21 @@
 ---
 title: Comienzo Curso 2018-19
-author: Antonio Marin Ecija
+author: Antonio Marín Ecija
 date: '2018-10-02'
 slug: comienzo-curso-2018-19
-categories:
-  - Resultados encuesta
-  - Shiny meetups R
-  - Visualizacion de redes
 tags:
   - grupo
+  - charlas
+  - encuesta 2018-19
+  - shiny
+  - leaflet
+  - meetups R
+  - redes complejas
+  - visualización
 ---
 
-Meetup R - Sevilla - 2 Octubre 2018
 
-En nuestra sesión de de comienzo de curso 2018-19, tuvimos tres charlas:
+En nuestra sesión de comienzo de curso 2018-19, tuvimos tres charlas:
 
   - Presentación de los resultados de la Encuesta 2018
   

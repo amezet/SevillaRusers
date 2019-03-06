@@ -1,13 +1,11 @@
 ---
 title: Depuración geométrica-topológica de datos geográficos
-author: Antonio Marin Ecija
+author: Antonio Marín Ecija
 date: '2019-01-08'
 slug: gis-topologia-depuracion
-categories:
-  - GIS
-  - Depuración topología
 tags:
-  - grupo
+  - charlas
+  - GIS
 ---
 
 En nuestra reunión del 8 de Enero, [Jerónimo Carranza](https://www.linkedin.com/in/jeronimocarranzacarranza/), fundador y director de [ASTERIONAT](http://asterionat.com/) nos habló sobre depurar datos topológicos usando el paquete SF [Simple Features](https://cran.r-project.org/web/packages/sf/vignettes/sf1.html).
